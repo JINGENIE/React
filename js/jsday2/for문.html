@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>for문 연습</h1>
+</body>
+</html>
+<script>
+    let flowers = ["작약", "목련" , "백일홍", "국화" ,"장미"];
+    for( i=0 ; i<flowers.length; i++){
+        console.log(i, flowers[i]);
+    }
+
+    for( i in flowers) //in연산자는 배열의 인덱스를 가져온다.
+    {
+        console.log(i, flowers[i]);
+    }
+
+    for( i of flowers) //배열의 요소를 하나씩 가져온다.
+    {
+        console.log(i);
+    }
+
+    //forEach구문은 매개변수로 함수가 전달된다
+    //매개체가 되는 변수, 함수외부에서 함수내부로 값을 전달할 때 쓰이는 변수이다.
+    //foreach함수한테 함수를준다. 매개변수 하나, 반환값 없는 함수를 구성해서 전달해야한다.
+    //주로 출력용으로 준다. 
+    flowers.forEach( (a)=> {
+        console.log(a);
+    });
+
+    let flag = false;
+    i=0;
+    j=0;
+    while(true)
+    {   i=i+1;
+        while(true)
+        {
+            console.log(i,j);
+            j=j+1
+            if(j>=5)
+            {
+                flag=true;
+                break;
+               
+            }
+        }
+        if(flag)
+        break;
+    }
+    
+//이 코드는 내부에 중첩 루프가 있는 무한 루프를 만듭니다.
+
+// 먼저 변수를 및 로 초기화 flag합니다 . 
+//그런 다음 중첩된 내부 루프가 있는 외부 루프로 들어갑니다.falsei1
+
+// 내부 루프는 j실행될 때마다 변수를 1씩 증가시킵니다. 
+//j5 이상의 값에 도달하면 내부 루프가 설정되고 문 flag을 true사용하여 루프에서 나갑니다 break.
+
+// flag외부 루프가 로 설정되었음을 감지하면 true(즉, 내부 루프가 종료되었을 때) 
+//명령문을 사용하여 루프에서 빠져나옵니다 break.
+
+// i, j, 또는 의 값을 수정하는 다른 명령문이나 조건이 없기 때문에
+// flag이 코드는 내부 루프가 값 5에 도달할 때까지 계속 실행되는 
+//무한 루프에 들어가고 j이 시점에서 내부 루프가 종료되고 로 설정 flag됩니다 true.
+ //그런 다음 외부 루프도 종료되고 프로그램이 종료됩니다.

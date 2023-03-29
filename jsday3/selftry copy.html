@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--
+        문제1 ) 사각형 면적구하기
+        사각형의 가로세로를 입력 받아 면적을 구하여 출력하세요
+
+
+
+        문제2 ) 이름, 일주일간 근무시간, 시간당 급여액을 입력받아 주급을 계산하세요.
+        단/  20시간 초과 근무시 초과근무에 대해서는 초과수당을 지급하세욧
+        초과수당은 시간당 급여액의 50%입니다.
+
+        근무시간: 30 <-
+        시간당급여액 : 20000
+        기본급 : 600000 초과수당 : 100000  합: 700000 <- span 태그
+    -->
+
+    <!-- 문제1  -->
+    x: <input type="text" name="xvalue" id="xvalue"><br/>
+    y: <input type="number" name="yvalue" id="yvalue"><br/>
+
+    <button type="text" onclick="operation()">주급계산하기</button><br/>
+    result : <span id="result"></span>
+    </body>
+    </html>
+<script>
+    function operation(oper){
+        x= document.getElementById("xvalue").value;
+        y= document.getElementById("yvalue").value;
+
+        result = parseInt(x) * parseInt(y);
+
+        document.getElementById("result").innerHTML =result;
+         }
+
+
+</script>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>과제1.주급계산하기 </h1>
+</body>
+</html>
+<script>
+    let person = [
+    {"name" : "홍길동" , workhour:40, wage: 10000},
+    {"name" : "임꺽정" , workhour:15, wage: 20000},
+    {"name" : "장길산" , workhour:20, wage: 20000},
+    {"name" : "강감찬" , workhour:30, wage: 15000},
+    {"name" : "이순신" , workhour:40, wage: 30000},
+];
+
+// for(things of person){
+//     things["weeklywage"] = things["workhour"] *things["wage"];
+// }
+
+// for(things of person){
+//     console.log(`이름 : ${things["name"]} 근무시간: ${things["workhour"]} 시간당급여액: ${things["wage"]} 주급: ${things["weeklywage"]}} `);
+// }
+
+// let totalWage = person.map((totalWage)=>{
+//     totalWage.weeklywage = (person.workhour * person.wage);
+//     return totalWage;
+// })
+
+let totalWage = person.map((X)=>{
+    X.weeklywage = (X.workhour * X.wage);
+    return X;
+})
+
+console.log(totalWage);
+console.log(person);
+
+
+let s = [
+    {name:"홍길동", kor:90, eng: 10, mat:70},
+    {name:"임꺽정", kor:90, eng: 20, mat:70},
+    {name:"장길산", kor:90, eng: 30, mat:70},
+    {name:"강감찬", kor:90, eng: 40, mat:70},
+    {name:"이순신", kor:90, eng: 50, mat:70},
+
+];
+
+s.map((item)=>{
+    item.total = item.kor + item.mat +item.eng;
+    item.avg = item.total/3;
+    return item;
+})
+.forEach(item=>{
+    console.log(`${item.name} ${item.total} ${item.avg}`);
+})
+</script>

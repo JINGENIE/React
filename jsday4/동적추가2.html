@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button type="button" id="btnAdd">추가</button>&nbsp;
+    <button type="button" id="btnDel">삭제</button><br/>
+    <table style = "width:80%;margin:auto;border:blue 1px solid">
+        <!--열별로 스타일 지정하기 위한 목적-->
+        <colgroup>
+            <col style="width:33%">
+            <col style="width:33%">
+            <col style="width:33%">
+        </colgroup>
+        <thead>
+            <th>품목</th>
+            <th>개수</th>
+            <th>단가</th>
+        </thead>
+        <tbody id="tbody">
+            <tr>
+                <td><input type="text" name="product_nam"></td>
+                <td><input type="text" name="product_count"></td>
+                <td><input type="text" name="product_price"></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
+<script>
+    let data = [
+        {name:"새우깡", count:2, price:2000},
+        {name:"감자깡", count:20, price:1500},
+        {name:"고구마까", count:22, price:3000},
+        {name:"맛동산", count:32, price:4000},
+        {name:"에이스", count:42, price:6000}
+    ];
+    window.onload=()=>{
+        document.getElementById("btnAdd").addEventListener("click",goAdd);
+        document.getElementById("btnDel").addEventListener("click",goDel);
+        //load();
+    }
+    function goAdd(){
+        tbody = document.getElementById("tbody");
+        console.log(tbody.rows.length); //데이터 개수 확인
+      //  for(i in data)
+      
+        row = tbody.insertRow(tbody.rows.length); //맨아래에 새로운 행추가
+        cell1 = row.insertCell(0);  //새로운 셀 추가
+        cell2 = row.insertCell(1);
+        cell3 = row.insertCell(2);
+        cell2.innerHTML='<input type="text" name="product_nam">';
+        cell3.innerHTML='<input type="text" name="product_count">';
+        cell1.innerHTML='<input type="text" name="product_price">';
+        
+    }
+        function goDel()
+        {
+            tbody = document.getElementById("tbody");
+            if(tbody.rows.length>1)
+            tbody.deleteRow(tbody.rows.length-1); //index
+            else
+            alert("더이상 삭제가 불가능합니다.")
+        }
+    
+</script>

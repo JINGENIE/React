@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <p>여기요</p>
+    <p id="test1">내용을 바꾸자</p>
+</body>
+</html>
+<script>
+    $(document).ready( ()=>{
+        $("p").click(()=>{
+            alert("눌림");
+        });
+
+        $("test1").html("<h1>글자바꾸깅</h1>");
+    })
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn1" style="background-color: aqua" onclick="changeBackground(this)">배경색</button>
+    <button id="btn2" style="background-color: skyblue" onclick="changeBackground(this)">배경색</button>
+    <button id="btn3" style="background-color: pink" onclick="changeBackground(this)">배경색</button>
+    <button id="btn4" style="background-color: magenta" onclick="changeBackground(this)">배경색</button>
+    <button id="btn5" style="background-color: green" onclick="changeBackground(this)">배경색</button>
+    <button id="btn6" style="background-color: yellow" onclick="changeBackground(this)">배경색</button>
+    <button id="btn7" style="background-color: purple" onclick="changeBackground(this)">배경색</button>
+</body>
+</html>
+<script>
+    function changeBackground(me){
+        //event: 자바스크립트가 제공하는 내장객체, 발생한 이벤트에 대한 모든 정보를 갖고있다.
+        console.log(event.target.id);
+      body=  document.getElementsByTagName("body");
+      body[0].style.backgroundColor=me.style.backgroundColor;
+    }
+</script>

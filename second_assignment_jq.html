@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <h3>성적관리프로그램</h3>
+
+    <label for="name">이름:</label><br>
+    <input type="text" id="name"><br>
+    <label for="kor">국어:</label><br>
+    <input type="text" id="kor"><br>
+    <label for="eng">영어:</label><br>
+    <input type="text" id="eng"><br>
+    <label for="math">수학:</label><br>
+    <input type="text" id="math"><br>
+    <button type="text" id="operation">결과확인</button><br/>
+    <div id="result"></div>
+
+</body>
+</html>
+<script>    
+    $("#operation").click(()=>{
+        const name = $("#name").val();
+        const kor = parseInt($("#kor").val());
+        const eng = parseInt($("#eng").val());
+        const math = parseInt($("#math").val());
+        const score = kor + eng + math;
+        const avg = score / 3;
+
+        if(kor>100 || kor <0){
+        alert("국어 점수를 확인해주세요");
+        return;
+        }
+        if(eng>100 || eng <0){
+        alert("영어 점수를 확인해주세요");
+        return;
+        }
+        if(math>100 || math <0){
+        alert("수학 점수를 확인해주세요");
+        return;
+        }
+
+        const temp = `${name}의 총점은 ${score} 이며 평균은 ${avg} 입니다`;
+ 
+    $("#result").html(temp);
+
+    });
+
+ 
+
+</script>

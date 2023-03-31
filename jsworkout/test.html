@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    class Animal{
+        constructor(name){
+            this.speed =0;
+            this.name=name;
+        }
+
+    run(speed){
+        this.speed=speed;
+        alert(`${this.name}가 속도 ${this.speed}로 달립니다.`)
+    }
+
+    stop(){
+        this.speed =0;
+        alert(`${this.name} 가 멈췄습니다.`)
+    }
+    }
+</script>

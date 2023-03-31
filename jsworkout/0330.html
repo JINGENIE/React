@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
+<script>
+    var res = (function(){
+        var a= 3;
+        var b =5;
+        return a*b;
+    }());
+
+    console.log(res);
+
+    res = (function(a,b){
+        return a*b;
+    }(3,5));
+
+    console.log(res);
+
+    //재귀함수는 반복되는 처리를위ㅣ해 사용한다.
+    function countdown(n){
+        if(n<0) return;
+        console.log(n);
+        countdown(n-1);
+    }
+    countdown(10);
+    //자기 자신을 호출하는 재귀함수를사용하면 반복되는 처리를 반복문
+    //없이 구현할 수 있다. 
+
+    function factorial(n){
+        if(n<=1) return 1;
+        return n * factorial(n-1);
+    }
+</script>

@@ -46,7 +46,10 @@ let server = http.createServer((request, response)=>{
     console.log(query.userid != "" & query.username != "" );
 
         response.writeHead(200, {'Content-Type' :'text/html;charset=utf-8'});
-        response.end(`아이디 :${query.userid} 이름:${query.username}`);
+        // response.end(`아이디 :${query.userid} 이름:${query.username}`);
+        let x=query.username;
+        let y=query.userid;
+        response.end(`아이디 :${x} 이름:${y}`);
         
     }
 

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head>
+<body>
+    <h3>성적관리프로그램</h3>
+    <!--성적관리프로그램 작성
+    입력사항(input): 이름, 국어, 영어 수학
+    총점(div)
+    평균출력(DIV)-->
+    <form action="/calc">
+    <label for="name">이름:</label><br>
+    <input type="text" name="name"><br>
+    <label for="kor">국어:</label><br>
+    <input type="text" name="kor"><br>
+    <label for="eng">영어:</label><br>
+    <input type="text" name="eng"><br>
+    <label for="math">수학:</label><br>
+    <input type="text" name="math"><br>
+    <button type="text" name="btnCalc">결과확인</button><br/>
+    </form>
+</body>
+</html>
+<script>    
+window.onload=()=>{
+    let btnCalc = document.getElementById("btnCalc");
+
+    btnAdd.addEventListner("click",()=>{
+        document.forms[0].submit();
+    })
+}
+</script>

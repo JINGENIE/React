@@ -1,0 +1,14 @@
+{
+	"folders": [
+		{
+			"name": "project",
+			"path": "../../../../AppData/Roaming/lessipe-cookbook/project"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "project"
+	}
+}

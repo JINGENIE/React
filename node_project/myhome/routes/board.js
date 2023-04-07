@@ -16,7 +16,6 @@ router.get('/view/:id', async function(req, res, next) {
   res.render('board/board_view', { item: results[0] });
 });
 
-
 // router.get('/view', async function(req, res, next) {
 //   let sql = 
 //   `select from tb_board where id=${id} title=${title} contents=${contents} id=${id}`;

@@ -31,11 +31,11 @@
   <h1 style="margin-top: 4vw;">로그인</h1>
 <form name="loginform">
   <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="아이디" id="userid">
+    <input type="text" class="form-control" placeholder="아이디" id="userid" name="userid">
   </div>
 
   <div class="input-group mb-3">
-    <input type="password" class="form-control" placeholder="페스워드" id="password">
+    <input type="password" class="form-control" placeholder="페스워드" id="password" name="password>
   </div>
 
 
@@ -56,25 +56,60 @@
 </html>
 
 <script>
+$(document).ready(()=>{
+  $("#btnLogin").click(goLogin);//goLogon() 함수를 실행한 결과가 전달.
+                                //goLogon -함수의주소만전달
+  $("#btnCancel").click(goCancel);
+})
+
+function goLogin(){
+  $.ajax(
+    {
+      url:"/member/login",
+      data:{userid:$("#userid").val(), password: $("#password").val()},
+      dataType:"json",
+      method:"post"
+    }
+  )
+  .done((res)=>{
+    console.log(res.result);
+    if(res.result=="success")
+    {
+      alert(res.msg);
+      location.href="/"; //첫번째 페이지로 
+    }
+    else
+    {
+      alert(res.msg)
+    }
+  })
+  .fail((res,status,error)=>{
+    console.log(status)
+  })
+}
+
+function goCancel(){
+
+}
   
-  $(document).ready(()=>{
-     $("#btnLogin").click(() => {
-      let userid = $("#userid").val();
-      let password = $("#password").val();
-       $.ajax({
-         url: "/member/logincheck",
-         data: { userid: userid, password:password },
-         method: "post",
-         dataType: "json"
-       }).then((result) => {
-         if (result.result == 'success') {
-           alert("로그인 성공입니다.");
-         } else {
-           alert("로그인 실패입니다.");
-         }
-       }).catch((res, status, error) => {
-         console.log(status);
-       });
-     });
-  });
+  // $(document).ready(()=>{
+  //    $("#btnLogin").click(() => {
+  //     let userid = $("#userid").val();
+  //     let password = $("#password").val();
+  //      $.ajax({
+  //        url: "/member/logincheck",
+  //        data: { userid: userid, password:password },
+  //        method: "post",
+  //        dataType: "json"
+  //      }).then((result) => {
+  //        if (result.result == 'success') {
+  //          alert("로그인 성공입니다.");
+  //        } else {
+  //          alert("로그인 실패입니다.");
+  //        }
+  //      }).catch((res, status, error) => {
+  //        console.log(status);
+  //      });
+  //    });
+  // });
 </script>

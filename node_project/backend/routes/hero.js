@@ -59,7 +59,7 @@ router.get('/view/:id', async function(req, res, next) {
         res.json({"result" :"success","hero": result[0]});}
     catch(e){
         console.log(e);
-        res.json({"result":fail});
+        res.json({"result":"fail"});
     }
 });
 module.exports = router;
